@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GetinfoService} from './getinfo.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,6 @@ import { GetinfoService} from './getinfo.service';
 })
 export class AppComponent {
   title = 'githubsearch';
+
+
 }
