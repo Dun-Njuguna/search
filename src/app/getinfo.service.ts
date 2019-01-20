@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { User } from './user';
+import { Repos } from './repos';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,15 @@ export class GetinfoService {
 
 
   info: User;
+  rep: Array[];
+  repoArray: Array[];
+  individual: Repos;
   constructor(private http: HttpClient) {
     this.info = [
-    // new User ("bfgb","bfbf","fvfgb","fgbgb","fdgbf","dfb"),
-  ]
+    ]
+    this.rep = [
 
+    ]
   }
   getUser() {
     interface ApiResponse {
@@ -35,6 +40,33 @@ export class GetinfoService {
         this.info.following = response.following;
         this.info.public_repos = response.public_repos;
         console.log(this.info);
+        resolve()
+      }, error => {
+
+        reject(error)
+      }
+      )
+    })
+
+    return promise
+  }
+
+
+  getRepos(i) {
+    interface ApiResponse {
+      name: any;
+      html_url: any;
+      description: any;
+    }
+    let promise = new Promise((resolve, reject) => {
+      this.http.get<ApiResponse>(environment.apiUrl1 + "/repos").toPromise().then(response => {
+        console.log(response);
+        this.rep=response;
+
+        for (i = 0; i < this.rep.length; i++) {
+          this.repoArray = this.rep[i];
+        }
+        console.log(this.repoArray);
         resolve()
       }, error => {
 

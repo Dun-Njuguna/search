@@ -9,12 +9,14 @@ import { User } from '../user';
 })
 export class GetComponent implements OnInit {
   mm: any[];
+  nn: any[];
   constructor(private infoService:GetinfoService){
    }
 
      ngOnInit() {
        this.infoService.getUser();
        this.mm=this.infoService.info;
-       
+       this.infoService.getRepos();
+       this.nn=this.infoService.rep;
   }
   }
