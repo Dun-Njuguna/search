@@ -33,3 +33,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 | search for repository              | repository is displayed                 |
 
 ---------------------------------------------------------------------------------
+
+## User Requirements.
+To use the application on the web follow the outlined steps:
+1. Vist the following page ().
+2. search for user or repository
+
+---------------------------------------------------------------------
+
+## Known bugs
+As of witting, there are no Known bugs.
+
+## Support or contribution instructions
+If you require to use or make any changes to this project, then reach out to me on the email below.
+
+## Contact information
+For any questions or suggestions please feel free to reach out to me at duncankariuki60@gmail.com
+
+-----------------------------------------------------------------------------
