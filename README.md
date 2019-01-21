@@ -1,27 +1,35 @@
-# Githubsearch
+
+# Github Search Application
+### CREATED BY  Duncan Kariuki
+
+----------------------------------------------------------------------
+
+## Project Objectives
+The objective of this project is to create an application, that allows the user to search for github users or repositories.
+
+----------------------------------------------------------------------
+
+## Technologies used
+This project has been written in programming languages, like HTML which is used to create the basic skeleton of the pages and CSS which is used to style it.This languages ore dependent on each other in order for a web app to appear fully backed.
+The logical part of the application is created out of typescript, which is used to collect users queries.
+
+### 1.CSS(Cascading style sheet)
+Css is used to style there appearance of website on the web. Thus this project was a good exercise to help me understand how best to style a page. The project also tested my ability to use an external cascading style sheet for the whole project.
+
+### 2.Use of version control
+It is important that when collaborating or doing an independent project to be able to track the changes and revert to a previous stable state in case of the local copy being damaged.
+
+### 3.Angular.
+To use angular elements develop the applications user interface.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
-## Development server
+-----------------------------------------------------------------------------
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Behaviour driven Development (BDD)
+|#User inputs   |  #Example outputs |         
+|---------------|-------------------|
+| search for user             | The user account is displayed                  |
+| search for repository              | repository is displayed                 |
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+---------------------------------------------------------------------------------
