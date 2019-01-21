@@ -30,6 +30,9 @@ export class GetComponent implements OnInit {
        this.infoService.updateUserName(this.userName);
        console.log(this.userName);
 
+       this.repoService.updateUserName(this.userName);
+       console.log(this.userName);
+
        this.infoService.getUser();
        this.mm=this.infoService.info;
   }

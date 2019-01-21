@@ -9,9 +9,9 @@ import { Repos } from './repos';
 })
 export class GetinfoService {
   userName = "Dun-Njuguna";
-  client_id = "4ca1e5e523ddb90f1aac";
-  client_secret = "bfc49d77e8c5ec5a9afb927a71f159f23c15c1b8";
   info: User = new User("sample","sample","sample","sample","sample","sample");
+  client_id:"4ca1e5e523ddb90f1aac";
+  client_secret:"bfc49d77e8c5ec5a9afb927a71f159f23c15c1b8";
   constructor(private http: HttpClient) {
   }
   updateUserName (userName:string){
@@ -27,7 +27,7 @@ export class GetinfoService {
       public_repos: string;
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl + this.userName +'?client_id='+this.client_id +'&client_secret='+this.client_secret).toPromise().then(response => {
+      this.http.get<ApiResponse>("https://api.github.com/users/" + this.userName +'?client_id='+this.client_id +'&client_secret='+this.client_secret).toPromise().then(response => {
         console.log(response);
         this.info.name = response.name;
         this.info.login = response.login;
