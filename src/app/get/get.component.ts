@@ -15,19 +15,18 @@ import { Repos } from '../repos';
 })
 export class GetComponent implements OnInit {
 
-  mm: any[];
+  mm;
   nn: any[];
   repoArrayNew: any[];
   rep: Repos;
   repoServices: any[];
   constructor(private infoService:GetinfoService, private repoService:RepositoryService){
+    this.repoService.getRepos();
 
    }
 
-     ngOnInit(i) {
+     ngOnInit() {
        this.infoService.getUser();
        this.mm=this.infoService.info;
-       this.repoService.getRepos();
-       
   }
   }

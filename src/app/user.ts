@@ -1,10 +1,5 @@
 export class User {
   constructor(
-    public name: any,
-    public login: any,
-    public avatar_url: any,
-    public followers: any,
-    public following: any,
-    public public_repos: any
-  ){}
+    public name: string,public login: string,public avatar_url: string,
+    public followers: string,public following: string,public public_repos: string){}
 }

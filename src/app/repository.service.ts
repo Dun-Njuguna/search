@@ -16,7 +16,7 @@ export class RepositoryService {
   xx: any[];
   constructor(private http: HttpClient) { }
 
-  getRepos(i) {
+  getRepos() {
 
     interface ApiResponse {
       name: any;
