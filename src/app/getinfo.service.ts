@@ -11,14 +11,12 @@ export class GetinfoService {
 
 
   info: User;
-  rep: Array[];
-  repoArray: Array[];
-  individual: Repos;
+  repoArray: any[];
   constructor(private http: HttpClient) {
     this.info = [
     ]
     this.rep = [
-
+      new Repos("esdrftgyhj","fghjk","sedrftghj"),
     ]
   }
   getUser() {
@@ -61,11 +59,7 @@ export class GetinfoService {
     let promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(environment.apiUrl1 + "/repos").toPromise().then(response => {
         console.log(response);
-        this.rep=response;
-
-        for (i = 0; i < this.rep.length; i++) {
-          this.repoArray = this.rep[i];
-        }
+        this.repoArray = response;
         console.log(this.repoArray);
         resolve()
       }, error => {
