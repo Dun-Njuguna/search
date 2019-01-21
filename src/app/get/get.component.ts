@@ -14,7 +14,7 @@ import { Repos } from '../repos';
   styleUrls: ['./get.component.css']
 })
 export class GetComponent implements OnInit {
-
+  userName;
   mm;
   nn: any[];
   repoArrayNew: any[];
@@ -26,6 +26,10 @@ export class GetComponent implements OnInit {
    }
 
      ngOnInit() {
+
+       this.infoService.updateUserName(this.userName);
+       console.log(this.userName);
+
        this.infoService.getUser();
        this.mm=this.infoService.info;
   }

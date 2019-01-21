@@ -14,6 +14,9 @@ export class GetinfoService {
   info: User = new User("sample","sample","sample","sample","sample","sample");
   constructor(private http: HttpClient) {
   }
+  updateUserName (userName:string){
+     this.userName = userName;
+   }
   getUser() {
     interface ApiResponse {
       name: string;
