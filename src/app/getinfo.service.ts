@@ -8,16 +8,14 @@ import { Repos } from './repos';
   providedIn: 'root'
 })
 export class GetinfoService {
-
-
+  userName = "Dun-Njuguna";
+  client_id = "4ca1e5e523ddb90f1aac";
+  client_secret = "bfc49d77e8c5ec5a9afb927a71f159f23c15c1b8";
   info: User;
-  repoArray: any[];
   constructor(private http: HttpClient) {
     this.info = [
     ]
-    this.rep = [
-      new Repos("esdrftgyhj","fghjk","sedrftghj"),
-    ]
+
   }
   getUser() {
     interface ApiResponse {
@@ -29,7 +27,7 @@ export class GetinfoService {
       public_repos: any;
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response => {
+      this.http.get<ApiResponse>(environment.apiUrl + this.userName +'?client_id='+this.client_id +'&client_secret='+this.client_secret).toPromise().then(response => {
         console.log(response);
         this.info.name = response.name;
         this.info.login = response.login;
@@ -48,29 +46,5 @@ export class GetinfoService {
 
     return promise
   }
-
-
-  getRepos(i) {
-    interface ApiResponse {
-      name: any;
-      html_url: any;
-      description: any;
-    }
-    let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl1 + "/repos").toPromise().then(response => {
-        console.log(response);
-        this.repoArray = response;
-        console.log(this.repoArray);
-        resolve()
-      }, error => {
-
-        reject(error)
-      }
-      )
-    })
-
-    return promise
-  }
-
 
 }

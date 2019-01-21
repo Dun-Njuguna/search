@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { GetinfoService} from '../getinfo.service';
+import { GetinfoService } from '../getinfo.service';
+import { RepositoryService } from '../repository.service';
 import { User } from '../user';
-import { Repos } from './repos';
+import { Repos } from '../repos';
 
 @Component({
   selector: 'app-get',
   templateUrl: './get.component.html',
-  providers:[GetinfoService],
+  providers:[
+    GetinfoService,
+    RepositoryService,
+  ],
   styleUrls: ['./get.component.css']
 })
 export class GetComponent implements OnInit {
+
   mm: any[];
+  nn: any[];
   repoArrayNew: any[];
   rep: Repos;
-  constructor(private infoService:GetinfoService){
+  repoServices: any[];
+  constructor(private infoService:GetinfoService, private repoService:RepositoryService){
+
    }
 
-     ngOnInit() {
+     ngOnInit(i) {
        this.infoService.getUser();
        this.mm=this.infoService.info;
-       console.log(this.mm);
-       this.infoService.getRepos();
-       this.repoArrayNew=this.infoService.repoArray;
-       console.log(this.repoArrayNew);
+       this.repoService.getRepos();
+       
   }
   }
-
-
-  // rep: Repos;
-  // this.rep.name = this.repoArray[i].name;
-  // this.rep.html_url = this.repoArray[i].html_url;
-  // this.rep.description = this.repoArray[i].description;
